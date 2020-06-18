@@ -44,6 +44,14 @@ public class CameraAdjust : MonoBehaviour
         camera.fieldOfView *= scale;                      //Camera.fieldOfView 视野:  这是垂直视野：水平FOV取决于视口的宽高比，当相机是正交时fieldofView被忽略
         //把实际高度与理想高度的比率 scale乘加给Camera.fieldOfView。
         //这样就能达到，屏幕自动调节分辨率的效果
+
+
+/*        Resolution[] resolutions = Screen.resolutions;
+        foreach (Resolution res in resolutions)
+        {
+            print(res.width + "x" + res.height);
+        }
+        Screen.SetResolution(resolutions[0].height/2, resolutions[0].height, true);*/
     }
 
 }

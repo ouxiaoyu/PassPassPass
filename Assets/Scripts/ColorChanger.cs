@@ -7,7 +7,7 @@ public class ColorChanger : MonoBehaviour
 {
     public static Boolean isUpdate = false;
     GameObject[,] colorArray = new GameObject[7,25];
-    public static int[] array;
+    public static int[,] array;
 
     void Start()
     {
@@ -41,13 +41,12 @@ public class ColorChanger : MonoBehaviour
                 for (int i = 0; i < 25; i++)
                 {
                     colorArray[j, i].SetActive(false);
-                    GameObject.Find("Shape").tag = "Red";
                 }
             }
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < 25; i++)
             {
-                switch (array[i])
+                switch (array[1,i])
                 {
                     case 4:
                         colorArray[0,i].SetActive(true);

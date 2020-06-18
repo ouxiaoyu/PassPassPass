@@ -8,9 +8,8 @@ public class Shape : MonoBehaviour
     public static Boolean isUpdate = false;
     GameObject[] shapeArray = new GameObject[25];
     GameObject[] boundaryArray = new GameObject[10];
-    public static int[] array;
-    public static Color c = Color.red;
-    public static String name = "Red";
+    public static int[,] array;
+    public static int wall_color;
     void Start()
     {
         for (int i = 0; i < 25; i++)
@@ -27,12 +26,12 @@ public class Shape : MonoBehaviour
     {
         if (isUpdate)
         {
-            gameObject.gameObject.tag = name;
-            for (int i = 0; i < array.Length; i++)
+            gameObject.gameObject.tag = MovableCube.colorString[wall_color -4];
+            for (int i = 0; i < 25; i++)
             {
-                shapeArray[i].GetComponent<Renderer>().material.color = c;
+                shapeArray[i].GetComponent<Renderer>().material.color = MovableCube.colorArray[wall_color - 4];
 
-                if (array[i] == 1 || array[i] == 3)
+                if (array[0,i] == 1 || array[0,i] == 3)
                 {
                     shapeArray[i].SetActive(false);
                 }
@@ -44,7 +43,7 @@ public class Shape : MonoBehaviour
             }
             for (int i = 0; i < boundaryArray.Length; i++)
             {
-                boundaryArray[i].GetComponent<Renderer>().material.color = c;
+                boundaryArray[i].GetComponent<Renderer>().material.color = MovableCube.colorArray[wall_color - 4];
             }
             isUpdate = false;
         }

@@ -7,7 +7,7 @@ public class FixedCube : MonoBehaviour
 {
     public static Boolean isUpdate = false;
     public GameObject[] fixedCubeArray = new GameObject[25];
-    public static int[] array;
+    public static int[,] array;
 
     void Start()
     {
@@ -21,9 +21,9 @@ public class FixedCube : MonoBehaviour
     {
         if (isUpdate)
         {
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < 25; i++)
             {
-                if (array[i]==1)
+                if (array[0,i]==1)
                 {
                     fixedCubeArray[i].SetActive(true);
                 }
